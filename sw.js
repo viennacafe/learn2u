@@ -4,11 +4,14 @@
  * - 외부 라이브러리/글꼴/모델(CDN): 버전이 주소에 박혀 있어 한 번 받으면 캐시에서 바로 쓴다.
  * - TTS/음성 API 같은 그 밖의 요청은 건드리지 않는다(항상 네트워크).
  * 처음 한 번은 온라인으로 열어야 하고, 그 뒤로 오프라인에서 쓸 수 있다. 버전을 올리면 옛 캐시는 지운다. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'lecture-video-' + VERSION;
 
 // 앱이 시작할 때 꼭 필요한 파일: 설치(첫 접속) 때 미리 받아 둔다.
-const CORE = ['./', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CORE = [
+  './', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
+  './remote.webmanifest', './icons/icon-remote-192.png', './icons/icon-remote-512.png'
+];
 const CDN_CORE = [
   'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
